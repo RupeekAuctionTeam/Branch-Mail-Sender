@@ -118,7 +118,7 @@
     <input list="branchList" id="branchNameInput" required placeholder="Select or type branch">
     <datalist id="branchList">
       <option value="Test">
-    <option value="Fed - BANGALORE / ST. MARKS ROAD">
+      <option value="Fed - BANGALORE / ST. MARKS ROAD">
 <option value="Fed - BANGALORE / GANDHI NAGAR">
 <option value="Fed - BANGALORE / RAJAJI NAGAR">
 <option value="Fed - BANGALORE / BANASWADI">
@@ -386,14 +386,14 @@
     <label for="regards">Regards*</label>
     <select id="regards" required>
       <option value="">Select</option>
-      <option value="Arif">Karthik</option>
-      <option value="Sana">Yatish</option>
-      <option value="Sana">Arif</option>
-      <option value="Sana">Manasa</option>
-      <option value="Sana">Vijay</option>
-      <option value="Sana">Rajendra</option>
-      <option value="Sana">Prashanth</option>
-
+      <option value="Test">Test</option>
+        <option value="Karthik">Karthik</option>
+      <option value="Yatish">Yatish</option>
+      <option value="Arif">Arif</option>
+      <option value="Manasa">Manasa</option>
+      <option value="Vijay">Vijay</option>
+      <option value="Rajendra">Rajendra</option>
+      <option value="Prashanth">Prashanth</option>
     </select>
   </div>
 
@@ -427,12 +427,12 @@
   <button type="submit" id="sendMailBtn">Send Mail</button>
 </form>
 <script>
-const branchEmails = { "Test":"vidyadhar.patil@rupeek.com","Fed - BANGALORE / ST. MARKS ROAD":"bgra@federalbank.co.in",
+const branchEmails = {"Test":"vidyadhar.patil@rupeek.com","Fed - BANGALORE / ST. MARKS ROAD":"bgra@federalbank.co.in",
 "Fed - BANGALORE / GANDHI NAGAR":"bgrb@federalbank.co.in",
 "Fed - BANGALORE / RAJAJI NAGAR":"bgrd@federalbank.co.in",
 "Fed - BANGALORE / BANASWADI":"bgrj@federalbank.co.in",
 "Fed - BANGALORE/RT NAGAR":"bgrh@federalbank.co.in",
-"Fed - BANGALORE / INDIRANAGAR"":"bgri@federalbank.co.in",
+"Fed - BANGALORE / INDIRANAGAR":"bgri@federalbank.co.in",
 "Fed - BANGALORE / JALAHALLI":"bgrm@federalbank.co.in",
 "Fed - BANGALORE / VIJAYA NAGAR":"bgro@federalbank.co.in",
 "Fed - BANGALORE/SADASHIVANAGA":"bgru@federalbank.co.in",
@@ -832,7 +832,4 @@ form.addEventListener('submit', async (e)=>{
 });
 </script>
 </body>
-
 </html>
-
-
