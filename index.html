@@ -555,7 +555,7 @@ form.addEventListener('submit', async (e)=>{
     data.body=emailContent.body;
 
     // Call Apps Script
-    const response=await fetch("https://script.google.com/macros/s/AKfycbzWipQXC0hHilW0HAfNNIUyv1gWcVe8M4LH6Ies2UaxZlWVwSnTaII-b7fHaB2hECC4/exec", {
+    const response=await fetch("https://script.google.com/macros/s/AKfycbw-zKBoarLev2YC-0ZBVi617sf7mBc1zqDKNMztXAQ29qFwqDSTRgl4XJd4jJmaVZu1/exec", {
       method:"POST",
       body:JSON.stringify(data)
     });
@@ -573,3 +573,4 @@ form.addEventListener('submit', async (e)=>{
 </body>
 
 </html>
+
