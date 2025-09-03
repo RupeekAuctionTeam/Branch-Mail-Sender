@@ -729,23 +729,23 @@ function getEmailContent(data){
   switch(data.mailType){
     case "Packet Hold From The Auction":
       subject=`Hold The Packet From The Auction ${data.glId}-${data.customerName}`;
-      body+=`Kindly hold the packet from the auction, as the customer is willing to do the payment.<br><br>`;
+      body+=`Kindly hold the packet from the auction, as the customer is willing to do the payment<br><br>`;
       break;
     case "Packet Availability Confirmation":
       subject=`Packet Availability Confirmation ${data.glId}-${data.customerName}`;
-      body+=`Kindly confirm packet availability status for the below customer.<br><br>`;
+      body+=`Kindly confirm the packet availability status for below mentioned customer, and the customer is willing to do the payment<br><br>`;
       break;
     case "Customer Query for Auction Details":
       subject=`Customer Query for Auction Details ${data.glId}-${data.customerName}`;
-      body+=`Customer has reached out requesting gold auction details. Kindly furnish details.<br><br>`;
+      body+=`Customer has reached out to us requesting the gold auction details. You are requested to kindly furnish the auction details for the information of customer <br>Please find the customer details below.<br><br>`;
       break;
     case "Customer Query For Auction Surplus":
       subject=`Customer Query For Auction Surplus ${data.glId}-${data.customerName}`;
-      body+=`Customer ${data.customerName} requested auction surplus details. Kindly furnish.<br><br>`;
+      body+=`Customer ${data.customerName} has requested details of the auction surplus (if any). You are kindly requested to furnish the surplus details for the customer’s information.<br>Please find the customer details below.<br><br>`;
       break;
     case "Transfer of Surplus Amount To Customer":
       subject=`Transfer of Surplus Amount To Customer ${data.glId}-${data.customerName}`;
-      body+=`Customer requested transfer of surplus amount. Kindly confirm.<br><br>`;
+      body+=`Customer has reached out to us requesting the transfer of the surplus amount. You are requested to confirm the same at the earliest.<br>Please find the customer details below.<br><br>`;
       break;
   }
 
@@ -754,7 +754,7 @@ function getEmailContent(data){
 
   // Bank details
   if(data.mailType==="Transfer of Surplus Amount To Customer"){
-    body+=`<br><b>Bank Details:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br>Supporting documents attached.<br>`;
+    body+=`<br><b>Bank Details:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br> Please find the customer’s bank details below. The supporting documents are attached for your reference.<br>`;
   }
 
   // Add regards at the end
@@ -819,7 +819,7 @@ form.addEventListener('submit', async (e)=>{
     data.body=emailContent.body;
 
     // Call Apps Script
-    const response=await fetch("https://script.google.com/macros/s/AKfycbw-zKBoarLev2YC-0ZBVi617sf7mBc1zqDKNMztXAQ29qFwqDSTRgl4XJd4jJmaVZu1/exec", {
+    const response=await fetch("https://script.google.com/macros/s/AKfycbx1EHfcm3xssOR88KEHTNUBtHVXlcAMQqoNbeNiJQGGMac3rgs0BK1Z1DnRwjogBpVh/exec", {
       method:"POST",
       body:JSON.stringify(data)
     });
@@ -836,4 +836,5 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
 
