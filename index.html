@@ -754,7 +754,7 @@ function getEmailContent(data){
 
   // Bank details
   if(data.mailType==="Transfer of Surplus Amount To Customer"){
-    body+=`<br><b>Bank Details:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br> Please find the customer’s bank details below. The supporting documents are attached for your reference.<br>`;
+    body+=`<br><b>Please find the customer’s bank details below:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br> The supporting documents are attached for your reference.<br>`;
   }
 
   // Add regards at the end
@@ -836,5 +836,6 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
 
 
