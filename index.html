@@ -756,9 +756,12 @@ function getEmailContent(data){
   if(data.mailType==="Transfer of Surplus Amount To Customer"){
     body+=`<br><b>Bank Details:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br>Supporting documents attached.<br>`;
   }
+
+  // Add regards at the end
+  body+=`<br><br>Regards,<br>${data.regards}`;
+
   return {subject, body};
 }
-
 // Form submit
 form.addEventListener('submit', async (e)=>{
   e.preventDefault();
@@ -833,3 +836,4 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
