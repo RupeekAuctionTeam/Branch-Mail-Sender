@@ -757,11 +757,49 @@ function getEmailContent(data){
   }
 
   // Common details
-  body+=`GL ID: ${data.glId}<br>Customer Name: ${data.customerName}<br>Customer Number: ${data.customerNumber}<br>Branch Name: ${data.branchName}<br>`;
+  body += `
+<table style="width:100%; max-width:600px; border-collapse:collapse; font-family:Arial, sans-serif; font-size:14px; color:#333;">
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd; width:35%;">GL ID</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.glId}</td>
+  </tr>
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd;">Customer Name</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.customerName}</td>
+  </tr>
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd;">Customer Number</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.customerNumber}</td>
+  </tr>
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd;">Branch Name</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.branchName}</td>
+  </tr>
+</table>
+`;
 
   // Bank details
   if(data.mailType==="Transfer of Surplus Amount To Customer"){
-    body+=`<br><b>Please find the customer’s bank details below:</b><br>Bank A/C Number: ${data.bankAccount}<br>Bank Name: ${data.bankName}<br>IFSC Code: ${data.ifsc}<br> The supporting documents are attached for your reference.<br>`;
+    body += `
+<br>
+<b style="font-family:Arial, sans-serif; font-size:15px; color:#222;">Bank Details:</b><br><br>
+<table style="width:100%; max-width:600px; border-collapse:collapse; font-family:Arial, sans-serif; font-size:14px; color:#333;">
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd; width:35%;">Bank A/C Number</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.bankAccount}</td>
+  </tr>
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd;">Bank Name</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.bankName}</td>
+  </tr>
+  <tr>
+    <td style="background:#f4f6f9; font-weight:bold; padding:8px; border:1px solid #ddd;">IFSC Code</td>
+    <td style="padding:8px; border:1px solid #ddd;">${data.ifsc}</td>
+  </tr>
+</table>
+<br>
+<i style="font-family:Arial, sans-serif; font-size:13px; color:#555;">Supporting documents attached.</i><br>
+`;
   }
 
   // Add regards at the end
@@ -843,6 +881,7 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
 
 
 
