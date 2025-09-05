@@ -848,17 +848,23 @@ form.addEventListener('submit', async (e)=>{
       data.bankAccount=document.getElementById('bankAccount').value;
       data.bankName=document.getElementById('bankName').value;
       data.ifsc=document.getElementById('ifsc').value;
+     const passbookFile=document.getElementById('passbook').files[0];
+if(passbookFile){
+  data.passbook = await fileToBase64(passbookFile);
+  data.passbookType = passbookFile.type;
+}
 
-      const passbookFile=document.getElementById('passbook').files[0];
-      if(passbookFile) data.passbook=await fileToBase64(passbookFile); data.passbookType=passbookFile.type;
+const aadharFile=document.getElementById('aadhar').files[0];
+if(aadharFile){
+  data.aadhar = await fileToBase64(aadharFile);
+  data.aadharType = aadharFile.type;
+}
 
-      const aadharFile=document.getElementById('aadhar').files[0];
-      if(aadharFile) data.aadhar=await fileToBase64(aadharFile); data.aadharType=aadharFile.type;
-
-      const panFile=document.getElementById('pan').files[0];
-      if(panFile) data.pan=await fileToBase64(panFile); data.panType=panFile.type;
-    }
-
+const panFile=document.getElementById('pan').files[0];
+if(panFile){
+  data.pan = await fileToBase64(panFile);
+  data.panType = panFile.type;
+}
     const emailContent=getEmailContent(data);
     data.subject=emailContent.subject;
     data.body=emailContent.body;
@@ -881,6 +887,7 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
 
 
 
