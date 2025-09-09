@@ -749,6 +749,11 @@ function getEmailContent(data){
       subject=`Transfer of Surplus Amount To Customer ${data.glId}-${data.customerName}`;
       body+=`Customer has reached out to us requesting the transfer of the surplus amount. You are requested to confirm the same at the earliest.<br>Please find the customer details below.<br><br>`;
       break;
+     case "Handover the DD To The Customer":
+      subject=`Handover the DD To The Customer ${data.glId}-${data.customerName}`;
+      body+=` Customer has reached out to us requesting for the available DD, Kindly Handover to the customer. <br>Details are provided below.<br><br>`;
+      break;
+
   }
 
   // Common details
@@ -886,4 +891,5 @@ form.addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+
 
